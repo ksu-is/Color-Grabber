@@ -31,13 +31,15 @@ if blue > red and blue > green:
     print("\nDetected Color: BLUE")
     print("Blue is commonly used in art and movies to represent calmness, mystery, sadness, peace, hope, or loneliness. Dark blues often create feelings of fear, depth, and uncertainty.")
     print("unlike the other colors, a lighter blue is often used to represent dystopian atmopheres like in bladerunner 2047")
+    print("Dark ocean blues can create feelings of fear, uncertainty, depth, and hidden danger beneath. Movies like The Abyss (1989) or Moonlight (2016) are great examples of how blue capture the wonder and horror of the ocean ")
 
 elif red > blue and red > green:
 
     print("\nDetected Color: RED")
-    print("Red is commonly used to represent anger, danger, passion, love, pain, power, and urgency. In movies, red lighting is often used, during intense or violent scenes.")
-    print("unlike the other colors, a deep red is often used to represent evil, the sith from star wars")
-
+    print("Red is commonly used to represent anger, danger, passion, love, pain, power, and rage. It’s a primal color that demands attention" \
+    "In movies, red lighting is often used, during intense or violent scenes." \
+    "Red is used in frightening scenes from movies like The Shining (1980), " \
+    "or associated with evil and introductions like In Pulp Fiction (1994)")
 
 elif green > red and green > blue:
 

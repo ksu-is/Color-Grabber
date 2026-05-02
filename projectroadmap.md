@@ -6,4 +6,7 @@
 - [x] Add image upload feature
 - [ ] Add RGB extraction
 - [ ] Add HEX conversion
-- [ ] Add emotion/theme descriptions
+- [ ] add tkinter
+- [X] Add emotion/theme descriptions
+- [ ] add yellow, brown, black/white
+- [ ] run test throughs
