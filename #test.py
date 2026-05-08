@@ -3,20 +3,67 @@ from tkinter import filedialog
 from PIL import Image, ImageTk
 
 def describe_color(red, green, blue):
-    if blue > red and blue > green:
-        return "BLUE", "Blue represents calmness, mystery, sadness, depth, and the unknown."
-    elif red > blue and red > green:
-        return "RED", "Red represents anger, danger, passion, pain, and urgency."
-    elif green > red and green > blue:
-        return "GREEN", "Green represents nature, growth, peace, healing, and life."
-    else:
-        return "MIXED", "This color is mixed and does not strongly match red, green, or blue."
 
+    # BLACK
+    if red < 90 and green < 90 and blue < 90:
+        return "BLACK", (
+            "Black represents fear, death, mystery, power, emptiness, "
+            "and darkness. It is heavily used in horror and dramatic scenes."
+        )
+
+    # WHITE
+    elif red > 170 and green > 170 and blue > 170:
+        return "WHITE", (
+            "White represents purity, peace, innocence, hope, and cleanliness. "
+            "It can also feel cold or isolated in certain scenes."
+        )
+
+    # YELLOW
+    elif red > 170 and green > 170 and blue < 140:
+        return "YELLOW", (
+            "Yellow represents happiness, energy, warmth, optimism, "
+            "and attention. In some films it can also create feelings "
+            "of discomfort or madness."
+        )
+
+    # BROWN
+    elif red > 80 and green > 40 and green < 120 and blue < 80:
+        return "BROWN", (
+            "Brown represents stability, earth, reliability, age, "
+            "comfort, and ruggedness. Dark browns may also feel lonely or worn."
+        )
+
+    # BLUE
+    elif blue > red and blue > green:
+        return "BLUE", (
+            "Blue represents calmness, mystery, sadness, depth, hope, "
+            "and the unknown. Dark blues often create feelings of fear "
+            "or isolation in movies and games."
+        )
+
+    # RED
+    elif red > blue and red > green:
+        return "RED", (
+            "Red represents anger, danger, passion, pain, power, "
+            "and urgency. Red lighting is often used during intense scenes."
+        )
+
+    # GREEN
+    elif green > red and green > blue:
+        return "GREEN", (
+            "Green represents nature, growth, healing, life, and peace. "
+            "Dark greens can also feel toxic or unsettling."
+        )
+
+    else:
+        return "MIXED", (
+            "This color is mixed and does not strongly match one category."
+        )
+    
 def click_image(event):
     x = event.x
     y = event.y
 
-    # convert clicked resized-image coordinates back to original image coordinates
     original_x = int(x / scale)
     original_y = int(y / scale)
 
@@ -31,7 +78,8 @@ def click_image(event):
     color_name, description = describe_color(red, green, blue)
 
     result_label.config(
-        text="Clicked at: (" + str(original_x) + ", " + str(original_y) + ")\n"
+        text=
+        "Clicked at: (" + str(original_x) + ", " + str(original_y) + ")\n"
         + "RGB: " + str(pixel) + "\n"
         + "HEX: " + hex_color + "\n"
         + "Detected Color: " + color_name + "\n\n"
@@ -49,6 +97,7 @@ file_path = filedialog.askopenfilename(
 if file_path == "":
     print("No image selected.")
     root.destroy()
+
 else:
     original_image = Image.open(file_path)
 
@@ -60,6 +109,7 @@ else:
 
     scale_width = max_width / width
     scale_height = max_height / height
+
     scale = min(scale_width, scale_height)
 
     new_width = int(width * scale)
@@ -81,6 +131,7 @@ else:
         justify=LEFT,
         wraplength=700
     )
+
     result_label.pack()
 
     root.mainloop()
