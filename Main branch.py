@@ -58,13 +58,10 @@ def describe_color(red, green, blue):
 
    
 
-
-
-
     elif green > red and green > blue:
         return "GREEN", (
-            "Green represents nature, growth, healing, life, and peace. "
-            "Dark greens can also feel toxic or unsettling."
+            "Green is commonly used to represent nature, life, growth, healing, peace, and balance. In movies and games, darker greens can sometimes create feelings of poison, danger, or uneasiness, while lighter greens often feel refreshing and alive."
+            "unlike the other colors, a green can be used to represent whismey, like with peter pan"
         )
 
     else:
@@ -83,23 +80,6 @@ def describe_color(red, green, blue):
 
 
 
-
-
-
-'''
-elif red > blue and red > green:
-
-    
-elif green > red and green > blue:
-
-    print("\nDetected Color: GREEN")
-    print("Green is commonly used to represent nature, life, growth, healing, peace, and balance. In movies and games, darker greens can sometimes create feelings of poison, danger, or uneasiness, while lighter greens often feel refreshing and alive.")
-    print("unlike the other colors, a green can be used to represent whismey, like with peter pan")
-
-
-else:
-    print("\nNo strong color was detected.") 
-'''
 
 
 
